@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import AppBar from "../components/AppBar";
-import google from "../assets/google.svg";
+import LoginHeader from "../components/LoginHeader";
+import GoogleIcon from "../assets/google.svg?react";
 import Footer from "../components/Footer";
 
 function Login() {
@@ -9,17 +9,15 @@ function Login() {
   if (token) {
     Navigate("/");
   }
-  if (!token) {
-    Navigate("/login");
-  }
+
   const handleGoogleLogin = () => {
     window.location.href =
-      "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=http://localhost:5173/";
+      "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=http://localhost:5173/outbox";
   };
 
   return (
     <div>
-      <AppBar />
+      <LoginHeader />
       <div className="bg-black text-white w-screen h-screen flex flex-col justify-center items-center">
         <div className="bg-[#111214] text-center space-y-10 px-16 mx-2 rounded-2xl border border-[#343A40]">
           <div className="">
@@ -30,7 +28,7 @@ function Login() {
               className="mt-6 justify-center border-white/40 border text-center px-5 py-2 text-sm  flex items-center text-[#CCCCCC] rounded-lg cursor-pointer"
               onClick={handleGoogleLogin}
             >
-              <img src={google} alt="google" className="w-4 mr-3"></img>
+              <GoogleIcon className="w-7 mr-2" />
               <span>Sign Up with Google</span>
             </div>
           </div>
@@ -43,7 +41,7 @@ function Login() {
             </NavLink>
             <div className="my-8 mb-10 text-[#909296]">
               Already have an account?{" "}
-              <NavLink to="/signin" className="text-[#C1C2C5]">
+              <NavLink to="/login" className="text-[#C1C2C5]">
                 Sign In
               </NavLink>
             </div>

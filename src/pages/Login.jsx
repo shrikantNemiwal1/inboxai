@@ -12,7 +12,7 @@ function Login() {
 
   const handleGoogleLogin = () => {
     window.location.href =
-      "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://reach-inbox.netlify.app/outbox";
+      "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://reach-inbox.netlify.app/onebox";
   };
 
   return (
